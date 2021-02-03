@@ -8,6 +8,7 @@ import {
   SimpleChanges,
   ViewEncapsulation,
 } from '@angular/core';
+import { TextMask } from '../../models/text-mask.model';
 import { ValidatorPatterns } from '../../utils/validator-patterns.util';
 import { AbstractFormFieldComponent } from '../abstract-form-field.component';
 
@@ -23,11 +24,11 @@ export class InputComponent
   @Input() isDatepicker = false;
   @Input() isPhoneNumber = false;
 
-  private phoneNumberMask: any = {
+  private phoneNumberMask: TextMask = {
     mask: ValidatorPatterns.phoneMask,
   };
 
-  public currentTextMask: any = {
+  public currentTextMask: TextMask = {
     mask: false,
   };
 
