@@ -1,0 +1,95 @@
+<div class="form-wrap">
+  <div class="form-header">
+    <h1>Add Pacient</h1>
+  </div>
+  <form class="form" [formGroup]="form">
+    <div class="form-row">
+      <app-select
+        class="form-field"
+        fieldName="Ownership group"
+        [control]="branchControl"
+        [selections]="branches"
+        _propName="name"
+        _propValue="id"
+      >
+      </app-select>
+
+      <app-select
+        class="form-field"
+        fieldName="Community"
+        [control]="communityControl"
+        [selections]="communities"
+        _propName="name"
+        _propValue="id"
+      >
+      </app-select>
+    </div>
+
+    <div class="form-row">
+      <app-input
+        class="form-field"
+        [control]="firstNameControl"
+        fieldName="First Name"
+      ></app-input>
+
+      <app-input
+        class="form-field"
+        [control]="lastNameControl"
+        fieldName="Last Name"
+      ></app-input>
+    </div>
+
+    <div class="form-row">
+      <app-input
+        class="form-field"
+        [isDatepicker]="true"
+        [control]="dateOfBirthControl"
+        fieldName="Date of Birth"
+      >
+      </app-input>
+
+      <app-select
+        class="form-field"
+        [selections]="gender"
+        [control]="genderControl"
+        fieldName="Gender"
+      >
+      </app-select>
+
+      <app-select
+        class="form-field"
+        [selections]="languages"
+        [control]="languagesControl"
+        fieldName="Language"
+      ></app-select>
+    </div>
+
+    <div class="form-row">
+      <app-input
+        class="form-field"
+        [control]="emailControl"
+        fieldName="Email"
+      ></app-input>
+
+      <app-input
+        class="form-field"
+        [control]="phoneControl"
+        [isPhoneNumber]="true"
+        fieldName="Phone number"
+      ></app-input>
+    </div>
+  </form>
+  <div class="form-actions">
+    <div class="buttons">
+      <button (click)="resetForm()" mat-button type="button">Reset</button>
+      <button
+        (click)="submitForm()"
+        type="submit"
+        mat-button
+        class="mat-raised-button mat-primary"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+.form-wrap {
+  padding-top: 50px;
+
+  max-width: 900px;
+  display: block;
+  margin: 0 auto;
+
+  .form-header {
+    width: 100%;
+    position: relative;
+
+    h1 {
+      width: 20%;
+    }
+
+    &::after {
+      content: '';
+      top: 17px;
+      box-sizing: border-box;
+      position: absolute;
+      border-bottom: 1px solid black;
+      width: 80%;
+      right: 0;
+      opacity: 0.2;
+      transform: translateY(-50%);
+    }
+  }
+
+  .form {
+    &-row {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .form-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
